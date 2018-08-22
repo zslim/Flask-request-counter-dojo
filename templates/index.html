@@ -7,6 +7,13 @@
 <body>
 <h1>This is main page</h1>
 <a href="/request-counter"><p>Request counter</p></a>
-<p>Counted requests: {{ counter }} </p>
+<p>Counted requests: </p>
+<p>
+    <ul>
+        {% for key in counter %}
+            <li>{{ key }}: {{ counter[key] }}</li>
+        {% endfor %}
+    </ul>
+</p>
 </body>
 </html>
