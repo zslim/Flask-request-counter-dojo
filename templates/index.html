@@ -2,18 +2,27 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Main Page</title>
+    <title>Request counter</title>
 </head>
 <body>
-<h1>This is main page</h1>
-<a href="/request-counter"><p>Request counter</p></a>
-<p>Counted requests: </p>
-<p>
-    <ul>
-        {% for key in counter %}
-            <li>{{ key }}: {{ counter[key] }}</li>
-        {% endfor %}
-    </ul>
-</p>
+    <h1>Request counter</h1>
+    <p>Counted requests: </p>
+    <p>
+        <ul>
+            {% for key in counter %}
+                <li>{{ key }}: {{ counter[key] }}</li>
+            {% endfor %}
+        </ul>
+    </p>
+    <p>
+        <form action="/request-counter", method="get">
+            <input type="submit" value="Send GET request">
+        </form>
+    </p>
+    <p>
+        <form action="/request-counter", method="post">
+            <input type="submit" value="Send POST request">
+        </form>
+    </p>
 </body>
 </html>
